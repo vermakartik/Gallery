@@ -1,0 +1,23 @@
+{% extends 'image_gallery/base.html' %}
+{% block links %}
+    <div class="links">
+        <a href="{% url 'gallery:upload' %}">+</a>
+    </div>
+{% endblock %}
+
+{% block content %} 
+    {% if gallery_list %}
+        <div class="gallery_container">
+            <ul class="gallery_list">
+                {% for item in gallery_list %}
+                    <li class="gallery_item">
+                        <a href="{% url 'gallery:image_details' item.upload_time item.title_text %}">
+                            <img class="gallery_item_image" src="{{ item.image_file.url }}" />
+                            <p class="gallery_item_title">{{ item.title_text }}</p>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>          
+    {% endif %}
+{% endblock %}

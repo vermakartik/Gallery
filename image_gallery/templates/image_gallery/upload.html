@@ -1,0 +1,25 @@
+{% extends 'image_gallery/base.html' %}
+{% load static %}
+
+{% block links %}
+    <div class="links">
+        <a href="{% url 'gallery:image_list' %}" class="link_list"><img src="{% static 'image_gallery/media/image_2.png' %}"></a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="main_content">
+        <div class="header">
+            <p>Upload Image</p>
+        </div>  
+        <div class="image_form">
+        {% if image_form %}
+            <form method="POST" action="{% url 'gallery:upload' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ image_form.as_p }}
+                <button type="submit">Submit</button>
+            </form> 
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'image_gallery/base.html' %}
+{% load static %}
+{% block links %}
+    <div class="links">
+        <a href="{% url 'gallery:upload' %}">+</a>
+        <a href="{% url 'gallery:image_list' %}" class="link_list down_link"><img src="{% static 'image_gallery/media/image_2.png' %}"></a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="main_content">
+        {% if image_object %}
+            <div>
+                <img src="{{ image_object.image_file.url }}" class="image_act"/>
+                <p class="image_title">{{ image_object.title_text }}</p> 
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
