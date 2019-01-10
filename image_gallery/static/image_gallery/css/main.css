@@ -128,11 +128,7 @@ input[type="text"]{
 input[type="text"]:active, input[type="text"]:focus{
     border-bottom: 2px solid #004d40;
     background: rgba(0, 0, 0, 0.05);
-    outline: none;input[type="text"]:active, input[type="text"]:focus{
-        border-bottom: 2px solid #004d40;
-        background: rgba(0, 0, 0, 0.05);
-        outline: none;
-    }
+    outline: none;
 }
 
 label[for="id_image_file"]{
@@ -497,4 +493,25 @@ a.down_link:hover {
     width: 100%;
     background: red;
     z-index: 12;
+}
+
+.center_content {
+    position: absolute;
+    border-radius: 16px;
+    left: 50%;
+    top: 50%;
+    font-family: roboto, "sans-serif";
+    transform: translate(-50%, -50%); 
+    text-align: center;
+}
+
+.center_content img {
+    width: 64px;
+    height: 64px;
+}
+
+.center_content p {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: 
 }
