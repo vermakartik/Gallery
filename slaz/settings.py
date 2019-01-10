@@ -25,7 +25,7 @@ SECRET_KEY = 'u^hclub)xbtxalb2)r7rk-(#3y9xqhkbney$2(hg00en!68-0*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['convosyn.pythonanywhere.com']
+ALLOWED_HOSTS = ['convosyn.pythonanywhere.com', 'localhost']
 
 
 # Application definition

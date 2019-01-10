@@ -12,7 +12,8 @@ def upload(request):
         print(request.FILES['image_file'])
         if request.FILES['image_file']:
             image_form = forms.GalleryForm(request.POST, request.FILES)
-            image_obj = image_form.save()
+            if image_form.is_valid():
+                image_obj = image_form.save()
         return HttpResponseRedirect(reverse("gallery:image_details", args=(str(image_obj.upload_time), str(image_obj.title_text)))) 
     else:
         print("GET METHOD LOADING POST...")
