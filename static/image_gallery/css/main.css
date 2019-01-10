@@ -38,7 +38,19 @@ h1.title_app_name {
 
 div.main_content{
     position: absolute;
-    height: 600px;
+    height: 600px;div.main_content{
+        position: absolute;
+        height: 600px;
+        width: 600px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); 
+        text-align: center;
+    }
+    
     width: 600px;
     background: white;
     border-radius: 16px;
@@ -497,4 +509,17 @@ a.down_link:hover {
     width: 100%;
     background: red;
     z-index: 12;
+}
+
+.center_content {
+    position: absolute;
+    height: 600px;
+    width: 600px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
 }

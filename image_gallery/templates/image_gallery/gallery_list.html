@@ -1,4 +1,5 @@
 {% extends 'image_gallery/base.html' %}
+{% load static %}
 {% block links %}
     <div class="links">
         <a href="{% url 'gallery:upload' %}">+</a>
@@ -18,6 +19,11 @@
                     </li>
                 {% endfor %}
             </ul>
-        </div>          
+        </div> 
+    {% else %}
+        <div class="center_content">
+            <img src="{% static 'image_gallery/media/image_3.png' %}">
+            <p>No Images Found.</p>
+        </div>         
     {% endif %}
 {% endblock %}
