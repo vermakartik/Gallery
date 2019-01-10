@@ -6,6 +6,10 @@ from django.utils.dateparse import parse_date
 from . import models
 from . import forms
 
+from . import utils
+
+from django.conf import settings
+
 # Create your views here.
 def upload(request):
     if request.method == "POST":
@@ -14,6 +18,8 @@ def upload(request):
             image_form = forms.GalleryForm(request.POST, request.FILES)
             if image_form.is_valid():
                 image_obj = image_form.save()
+                print("\033[31;1m" + str(image_obj.image_file.url) + "\033[0m")
+                utils.compressImage(settings.BASE_DIR + image_obj.image_file.url)
         return HttpResponseRedirect(reverse("gallery:image_details", args=(str(image_obj.upload_time), str(image_obj.title_text)))) 
     else:
         print("GET METHOD LOADING POST...")
